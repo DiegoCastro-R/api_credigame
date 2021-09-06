@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import { Response } from 'express';
 import { IUser } from '../dtos';
 
 const User = require('../models/Users.model');

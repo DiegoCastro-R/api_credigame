@@ -6,6 +6,8 @@ const UserRouter = Router();
 
 UserRouter.post('/register', UserController.createNewUser);
 
-UserRouter.get('/', (_req: Request, res: Response) => res.json({ success: true, message: 'api is ok' }));
+UserRouter.get('/', (_req: Request, res: Response) =>
+  res.json({ success: true, message: 'api is ok' }),
+);
 
 export default UserRouter;

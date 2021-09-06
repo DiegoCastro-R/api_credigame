@@ -9,9 +9,7 @@ export const createNewUser = async (req: Request, res: Response) => {
       lastName,
       email,
       password,
-    }).then((response) => {
-      return res.json(response);
-    });
+    }).then((response) => res.json(response));
   } catch (err) {
     return res.json({ success: false, message: err });
   }
