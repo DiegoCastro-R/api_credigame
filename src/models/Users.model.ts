@@ -1,6 +1,6 @@
-import moment from "moment";
-import mongodb from "../configs/db";
-import "moment/locale/pt";
+import moment from 'moment';
+import mongodb from '../configs/db';
+import 'moment/locale/pt';
 
 const UsersSchema = new mongodb.Schema({
   name: {
@@ -21,10 +21,10 @@ const UsersSchema = new mongodb.Schema({
   },
   createAt: {
     type: String,
-    default: moment(new Date()).format("L"),
+    default: moment(new Date()).format('L'),
   },
 });
 
-const Users = mongodb.model("users", UsersSchema);
+const Users = mongodb.model('users', UsersSchema);
 
 module.exports = Users;

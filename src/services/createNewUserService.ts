@@ -1,7 +1,8 @@
-const User = require("../models/Users.model");
-import bcrypt from "bcrypt";
-import { Response } from "express";
-import { IUser } from "../dtos";
+import bcrypt from 'bcrypt';
+import { Response } from 'express';
+import { IUser } from '../dtos';
+
+const User = require('../models/Users.model');
 
 const hashPassword = async (password: string) => {
   const salt = await bcrypt.genSalt(10);
@@ -21,10 +22,9 @@ const handleUser = async (UserData: IUser) => {
 
 const createNewUser = async (UserData: IUser) => {
   const hasAlreadyUsedEmail = await User.find({ email: UserData.email }).exec();
-  if (hasAlreadyUsedEmail.length)
-    return { success: false, message: "Email Already in use" };
+  if (hasAlreadyUsedEmail.length) return { success: false, message: 'Email Already in use' };
   await handleUser(UserData);
-  return { success: true, message: "User successfuly created" };
+  return { success: true, message: 'User successfuly created' };
 };
 
 export default createNewUser;

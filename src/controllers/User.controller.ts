@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { createUserService } from "../services";
+import { Request, Response } from 'express';
+import { createUserService } from '../services';
 
 export const createNewUser = async (req: Request, res: Response) => {
   try {
@@ -10,7 +10,6 @@ export const createNewUser = async (req: Request, res: Response) => {
       email,
       password,
     }).then((response) => {
-      console.log(response);
       return res.json(response);
     });
   } catch (err) {

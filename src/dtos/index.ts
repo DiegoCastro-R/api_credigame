@@ -1,3 +1,3 @@
-import { IUser } from "./User.dto";
+import { IUser } from './User.dto';
 
 export { IUser };

@@ -1,3 +1,3 @@
-import createUserService from "./createNewUserService";
+import createUserService from './createNewUserService';
 
 export { createUserService };
