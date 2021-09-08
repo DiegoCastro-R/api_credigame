@@ -3,6 +3,10 @@ import mongodb from '../configs/db';
 import 'moment/locale/pt';
 
 const UsersSchema = new mongodb.Schema({
+  id: {
+    type: String,
+    require: true,
+  },
   name: {
     type: String,
     require: true,

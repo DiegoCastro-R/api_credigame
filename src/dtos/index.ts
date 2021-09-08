@@ -1,3 +1,3 @@
-import { IUser } from './User.dto';
+import { IUser, IUserAuth } from './User.dto';
 
-export { IUser };
+export { IUser, IUserAuth };
