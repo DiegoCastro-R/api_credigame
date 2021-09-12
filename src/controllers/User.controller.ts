@@ -1,5 +1,10 @@
 import { Request, Response } from 'express';
-import { createUserService, authenticateUserService, updateUserScoreService } from '../services';
+import {
+  createUserService,
+  authenticateUserService,
+  updateUserScoreService,
+  rankingUserService,
+} from '../services';
 
 export const createNewUser = async (req: Request, res: Response) => {
   try {
@@ -29,6 +34,14 @@ export const updateUserScore = async (req: Request, res: Response) => {
     const { score } = req.body;
     // @ts-ignore
     await updateUserScoreService(req.user.id, score).then((response) => res.json(response));
+  } catch (err) {
+    return res.json({ success: false, message: err });
+  }
+};
+
+export const usersRanking = async (req: Request, res: Response) => {
+  try {
+    await rankingUserService().then((response) => res.json(response));
   } catch (err) {
     return res.json({ success: false, message: err });
   }

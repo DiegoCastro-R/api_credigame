@@ -12,4 +12,6 @@ UserRouter.post('/auth', UserController.authenticateUser);
 
 UserRouter.post('/update-score', ensureAuthenticated, UserController.updateUserScore);
 
+UserRouter.post('/ranking', ensureAuthenticated, UserController.usersRanking);
+
 export default UserRouter;
