@@ -10,9 +10,6 @@ API para aplicato mobile credigame
 
     yarn dev || npm dev
 
-# REST API
-
-The REST API to the example app is described below.
 
 ## Create New User
 
@@ -120,7 +117,7 @@ Body:
     Content-Length: 36
 
     {"success": true,"data": [{"name": string,"lastName": string,"score": number},{"name": string,"lastName": string,"score": number}]
-}
+
 
 
 
