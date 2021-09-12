@@ -14,7 +14,7 @@ const authenticateUser = async (UserData: IUserAuth) => {
   const token = jwt.sign({ id }, config.secrect, {
     expiresIn: config.timeout,
   });
-  return { success: true, data: { User: SelectedUser.name, UserMail: SelectedUser.email, token } };
+  return { success: true, user: { name: SelectedUser.name, email: SelectedUser.email }, token };
 };
 
 export default authenticateUser;

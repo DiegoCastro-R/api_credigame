@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createUserService, authenticateUserService } from '../services';
+import { createUserService, authenticateUserService, updateUserScoreService } from '../services';
 
 export const createNewUser = async (req: Request, res: Response) => {
   try {
@@ -9,6 +9,7 @@ export const createNewUser = async (req: Request, res: Response) => {
       lastName,
       email,
       password,
+      score: 0,
     }).then((response) => res.json(response));
   } catch (err) {
     return res.json({ success: false, message: err });
@@ -18,6 +19,16 @@ export const createNewUser = async (req: Request, res: Response) => {
 export const authenticateUser = async (req: Request, res: Response) => {
   try {
     await authenticateUserService(req.body).then((response) => res.json(response));
+  } catch (err) {
+    return res.json({ success: false, message: err });
+  }
+};
+
+export const updateUserScore = async (req: Request, res: Response) => {
+  try {
+    const { score } = req.body;
+    // @ts-ignore
+    await updateUserScoreService(req.user.id, score).then((response) => res.json(response));
   } catch (err) {
     return res.json({ success: false, message: err });
   }

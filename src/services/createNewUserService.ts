@@ -17,6 +17,7 @@ const handleUser = async (UserData: IUser) => {
     name: UserData.name,
     lastName: UserData.lastName,
     email: UserData.email,
+    score: 0,
     password: hashedPass,
   });
 };

@@ -19,6 +19,10 @@ const UsersSchema = new mongodb.Schema({
     type: String,
     require: true,
   },
+  score: {
+    type: Number,
+    require: true,
+  },
   password: {
     type: String,
     require: true,
