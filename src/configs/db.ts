@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const URL = 'mongodb://54.232.135.110:27017/credigame_db';
+const URL = 'mongodb://localhost:27017/credigame_db';
 
 mongoose.connect(URL);
 
